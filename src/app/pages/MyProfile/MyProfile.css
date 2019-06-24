@@ -1,0 +1,22 @@
+.containerForMainPart {
+  margin: 70px 0;
+  align-content: center;
+  padding-left: 13%;
+  padding-right: 13%;
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+}
+
+p {
+  display: block;
+}
+
+button {
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
+  margin: 20px;
+}

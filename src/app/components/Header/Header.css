@@ -1,0 +1,11 @@
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+  text-align: center;
+  background-color: rgb(157, 157, 241);
+  padding-left: 13%;
+  padding-right: 13%;
+}
+
+.collapse.navbar-collapse {
+  display: flex;
+  justify-content: flex-end;
+}
