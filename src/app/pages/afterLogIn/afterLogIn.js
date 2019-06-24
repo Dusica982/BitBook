@@ -2,10 +2,9 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Feed from '';
+import Feed from '../feed/Feed';
 
-
-class Feed extends React.Component {
+class AfterLogIn extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -17,22 +16,18 @@ class Feed extends React.Component {
         return (
             <>
                 <Header />
-
                 <Switch>
-                    <Route exact path="/" component={} />
-                    <Route exact path="/" component={} />
-                    <Route exact path="/feed" component={Feed} />
+                    <Route exact path="/postFeed" component={Feed} />
 
-                    <Redirect to="/feed" />
+                    <Redirect to="/postFeed" />
                 </Switch>
-
                 <Footer />
             </>
         )
     }
 }
 
-export default Feed;
+export default AfterLogIn;
 
 
 

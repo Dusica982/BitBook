@@ -1,7 +1,7 @@
 import React from 'react';
-import VideoPost from './VideoPost';
-import TextPost from './TextPost';
-import ImagePost from './ImagePost';
+// import VideoPost from './VideoPost';
+// import TextPost from './TextPost';
+// import ImagePost from './ImagePost';
 
 class Feed extends React.Component {
     constructor(props) {
@@ -12,14 +12,13 @@ class Feed extends React.Component {
     }
     render() {
         return (
-            <div>
-                <VideoPost />
+            <main>
+                {/* <VideoPost />
                 <TextPost />
-                <ImagePost />
-            </div>
+                <ImagePost /> */}
+            </main>
         )
     }
-
 }
 
 export default Feed;
