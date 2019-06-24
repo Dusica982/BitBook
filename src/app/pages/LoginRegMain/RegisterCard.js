@@ -1,5 +1,6 @@
 import React from 'react';
-
+import RegisterUser from '../../../services/usersService';
+import { User } from '../../../entities/User';
 
 class RegisterCard extends React.Component {
     constructor(props) {
@@ -12,18 +13,16 @@ class RegisterCard extends React.Component {
         }
         this.validation = this.validation.bind(this);
         this.onChange = this.onChange.bind(this);
-        // this.getData = this.getData.bind(this);
+        this.getData = this.getData.bind(this);
     }
 
-    // getData() {
-    //     const { name, email, password } = this.state;
-    //     let apiData = {
-    //         name: name,
-    //         email: email,
-    //         password: password
-    //     }
-    //     this.fetchUser(apiData);
-    // }
+    getData() {
+        const { name, email, password } = this.state;
+        const userObj = new User(name, email, password);
+        RegisterUser(userObj)
+            .then(response => response.json())
+    }
+
     onChange(e) {
         const { name, value } = e.target;
         this.setState({
@@ -59,7 +58,7 @@ class RegisterCard extends React.Component {
             this.setState({ errorMsg: "You need min 6 characters! Try again :)" })
         }
 
-        // this.getData();
+        this.getData();
     }
 
     render() {
