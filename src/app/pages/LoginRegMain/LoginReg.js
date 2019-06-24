@@ -1,7 +1,7 @@
 import React from 'react';
 import './LoginReg.css';
 import { LoginCard } from './LoginCard';
-import { RegisterCard } from './RegisterCard';
+import RegisterCard from './RegisterCard';
 // import { Login as a } from 'react-router-dom';
 
 class Main extends React.Component {
@@ -28,11 +28,11 @@ class Main extends React.Component {
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam in exercitationem facilis non iste veritatis ab pariatur, necessitatibus quasi! Expedita sit sapiente veritatis ducimus reprehenderit. Ipsam obcaecati ipsa corporis excepturi?
                     <p>Lorem</p>
                 </div>
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
+                <ul className="nav nav-tabs">
+                    <li className="nav-item">
                         <a onClick={this.changeForm} className="nav-link active" href="#">Login</a>
                     </li>
-                    <li class="nav-item">
+                    <li className="nav-item">
                         <a onClick={this.changeForm} className="nav-link" href="#">Register</a>
                     </li>
                 </ul>
