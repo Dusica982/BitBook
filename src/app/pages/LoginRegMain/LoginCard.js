@@ -1,8 +1,9 @@
 import React from 'react';
+import './LoginCard.css';
 
 export const LoginCard = () => {
     return (
-        <div>
+        <div className="containerRight">
             <form>
                 <label for="email">Email</label>
                 <input id="email" placeholder="Email Address" name="email" type="email" />
@@ -11,7 +12,7 @@ export const LoginCard = () => {
                 <label for="pass">Password</label>
                 <input id="pass" placeholder="Password" name="password" type="password" />
 
-                <input type="submit" value="Login" />
+                <input className="login" type="submit" value="Login" />
                 <p>Error msg</p>
             </form>
         </div>
