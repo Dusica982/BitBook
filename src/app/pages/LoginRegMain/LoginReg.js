@@ -28,12 +28,7 @@ class Main extends React.Component {
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam in exercitationem facilis non iste veritatis ab pariatur, necessitatibus quasi! Expedita sit sapiente veritatis ducimus reprehenderit. Ipsam obcaecati ipsa corporis excepturi?
                     <p>Lorem</p>
                 </div>
-<<<<<<< HEAD
-
-                <ul className="container Right nav nav-tabs">
-=======
-                <ul className="nav nav-tabs">
->>>>>>> 7865ed20d8b4e60b26693fdecc573cafcba2e587
+                <ul className="nav nav-tabs container Right nav nav-tabs">
                     <li className="nav-item">
                         <a onClick={this.changeForm} className="nav-link active" href="#">Login</a>
                     </li>

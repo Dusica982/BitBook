@@ -12,7 +12,7 @@ class RegisterCard extends React.Component {
         }
         this.validation = this.validation.bind(this);
         this.onChange = this.onChange.bind(this);
-        this.getData = this.getData.bind(this);
+        // this.getData = this.getData.bind(this);
     }
 
     // getData() {
