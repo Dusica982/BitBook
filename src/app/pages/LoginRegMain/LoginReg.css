@@ -1,0 +1,53 @@
+.container{
+margin: 20px auto;
+padding: 20px;
+border: 1px solid black;
+}
+
+
+
+.containerLeft{
+width: 50%;
+position: relative;
+padding: 30px;
+
+}
+
+h1{
+    display: block;
+    padding: 10px;
+}
+
+p{
+    display: block;
+padding: 10px;
+}
+
+
+
+.containerRight{
+width: 50%;
+position: relative;
+}
+
+
+
+li{
+    border-radius: 5px;
+    background-color: rgb(189, 236, 245);
+}
+
+ul{
+
+}
+
+label{
+    display: inline;
+}
+
+.field{
+    border-radius: 5px;
+    width: 90%;
+    background-color: rgb(189, 236, 245);
+    display: inline;
+}
