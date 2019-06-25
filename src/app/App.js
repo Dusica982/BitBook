@@ -9,15 +9,13 @@ class App extends React.Component {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
-      <>
-        <Switch>
-          <Route exact path="/" component={Main} />
-          <Route component={afterLogIn} />
-          {/* <Redirect path="/" /> */}
-        </Switch>
-      </>
+      <Switch>
+        <Route exact path="/login" component={Main} />
+        <Route path="/" component={afterLogIn} />
+      </Switch>
     );
   }
 }

@@ -12,6 +12,7 @@ class Main extends React.Component {
         }
         this.changeForm = this.changeForm.bind(this);
     }
+
     changeForm() {
         // if (this.state.formCard) {
         //     this.setState(prevState => {
@@ -42,7 +43,7 @@ class Main extends React.Component {
                             <a onClick={this.changeForm} className="nav-link" href="#">Register</a>
                         </li>
                     </ul>
-                    {(this.state.formCard === true) ? <LoginCard /> : <RegisterCard />}
+                    {(this.state.formCard === true) ? <LoginCard history={this.props.history} /> : <RegisterCard />}
                 </div>
             </main>
         )

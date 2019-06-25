@@ -4,12 +4,14 @@ import Footer from "../../components/Footer/Footer";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Feed from "../feed/Feed";
 import MyProfile from "../MyProfile/MyProfile";
+import PeoplePage from '../PeoplePage/PeoplePage';
 
 class AfterLogIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
       <>
@@ -17,8 +19,8 @@ class AfterLogIn extends React.Component {
         <Switch>
           <Route exact path="/feed" component={Feed} />
           <Route exact path="/profile" component={MyProfile} />
-          {/* <Route exact path="/people" component={People} /> */}
-          <Redirect path="/" />
+          <Route exact path="/people" component={PeoplePage} />
+          <Redirect path="/feed" />
         </Switch>
         <Footer />
       </>

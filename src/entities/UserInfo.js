@@ -4,5 +4,6 @@ export class UserInfo {
     this.first = first;
     this.last = last;
     this.about = about;
+
   }
 }
