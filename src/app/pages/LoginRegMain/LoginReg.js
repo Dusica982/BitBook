@@ -1,6 +1,6 @@
 import React from 'react';
 import './homePage.css';
-import { LoginCard } from './LoginCard';
+import LoginCard from './LoginCard';
 import RegisterCard from './RegisterCard';
 // import { Login as a } from 'react-router-dom';
 

@@ -57,3 +57,18 @@ export const getAllUsersInfo = () => {
 
 };
 
+export const logInFetch = (email, password) => {
+  let url = "https://book-api.hypetech.xyz/v1/auth/login";
+  const userObj = {
+    email: email,
+    password: password
+  }
+  return fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userObj)
+  })
+    .then((response) => response.json())
+}
