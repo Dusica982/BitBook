@@ -1,20 +1,21 @@
 import { UserInfo } from "../entities/UserInfo";
 
-const registerUser = apiDataObj => {
-  return "CAOO";
+const registerUser = (userObj) => {
+  // const userData = JSON.stringify(userObj);
+  let url = "https://book-api.hypetech.xyz/v1/auth/register";
+
+  return fetch(url, {
+    method: 'POST',
+    headers: {
+      "Content-type": "application/json",
+      "x-api-key": "B1tD3V"
+    },
+    body: JSON.stringify(userObj)
+  })
+    .then((response) => response.json())
 };
 
 export default registerUser;
-
-// export const registerUser = (apiDataObj) => {
-//     const userData = JSON.stringify(apiDataObj);
-//     let url = "https://book-api.hypetech.xyz/v1/auth/register";
-
-//     return fetch(url, {
-//         method: 'POST',
-//         body: userData
-//     })
-// }
 
 // export const sendValidatedData = (data) => {
 //     const apiData = JSON.stringify(data)
