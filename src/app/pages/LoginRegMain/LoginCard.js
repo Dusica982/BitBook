@@ -1,5 +1,6 @@
 import React from 'react';
 import './homePage.css';
+
 export const LoginCard = (props) => {
     const onSubmit = (event) => {
         event.preventDefault();
@@ -22,4 +23,3 @@ export const LoginCard = (props) => {
         </div>
     )
 }
-

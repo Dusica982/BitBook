@@ -22,9 +22,12 @@ class RegisterCard extends React.Component {
         const userObj = { name, email, password };
         RegisterUser(userObj)
             .then(response => {
-                localStorage.setItem("accessToken", response.accessToken)
+                if (response.statusCode < 200 || response.statusCode >= 300) {
+                    return (
+                        this.setState({ errorMsg: "Error with a Fetch request, user is already registered" })
+                    )
+                }
             })
-
     }
 
     onChange(e) {
@@ -32,35 +35,32 @@ class RegisterCard extends React.Component {
         this.setState({
             [name]: value
         })
-        // console.log(name, value);
     }
 
     onFormSubmit(e) {
         e.preventDefault()
         const { name, email, password } = this.state;
 
+        this.setState({ errorMsg: "" })
+
         if (name.length < 3) {
-            e.preventDefault()
             return (
                 this.setState({ errorMsg: "You need minimum 3 characters! Try again:)" })
             )
         }
 
         if (!email.includes("@")) {
-            e.preventDefault()
             return (
                 this.setState({ errorMsg: "You need monkey! Try again :)" })
             )
         }
 
         if (email.indexOf(".") < email.indexOf("@")) {
-            e.preventDefault()
             return (
                 this.setState({ errorMsg: "Email is not valid! Try again :)" })
             )
         }
         if (password.length < 6) {
-            e.preventDefault()
             this.setState({ errorMsg: "You need min 6 characters! Try again :)" })
         }
 
