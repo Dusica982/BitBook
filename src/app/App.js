@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import Main from "./pages/LoginRegMain/LoginReg";
 import afterLogIn from "./pages/afterLogIn/afterLogIn";
+import PeoplePage from './pages/PeoplePage/PeoplePage';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class App extends React.Component {
       <>
         <Switch>
           <Route exact path="/login" component={Main} />
-          <Route component={afterLogIn} />
+          {/* <Route component={afterLogIn} /> */}
+          <Route exact path="/people" component={PeoplePage} />
         </Switch>
       </>
     );

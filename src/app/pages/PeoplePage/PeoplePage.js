@@ -1,4 +1,6 @@
 import React from 'react';
+import { Author } from './Author';
+import { getAllUsersInfo } from '../../../services/usersService';
 
 
 class PeoplePage extends React.Component {
@@ -11,15 +13,23 @@ class PeoplePage extends React.Component {
     }
 
     componentDidMount() {
-        fetchAuthors()
-            .then(authors => this.setState({ authors }))
+        getAllUsersInfo()
+            .then(authors => {
+                this.setState({ authors });
+                console.log(this.state.authors);
+            })
+
     }
 
     render() {
         return (
-            <div className="container author-wrapper">
-                <h2>AUTHORS (6)</h2>
-                <ListOfAuthors authors={this.state.authors} />
+            <div>
+                Search User By Name
+                {this.state.authors.map(element => {
+                    return (
+                        <Author values={element} />
+                    )
+                })} />
             </div>
         )
     }
