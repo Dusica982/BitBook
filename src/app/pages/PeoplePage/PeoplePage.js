@@ -1,6 +1,8 @@
 import React from 'react';
 import { Author } from './Author';
 import { getAllUsersInfo } from '../../../services/usersService';
+import './PeoplePage.css';
+
 
 
 class PeoplePage extends React.Component {
@@ -23,13 +25,13 @@ class PeoplePage extends React.Component {
 
     render() {
         return (
-            <div>
-                Search User By Name
+            <div className="oneUserMainBox">
+                <input placeholder="Search" />
                 {this.state.authors.map(element => {
                     return (
                         <Author values={element} />
                     )
-                })} />
+                })}
             </div>
         )
     }
