@@ -1,7 +1,8 @@
 import React from 'react';
 import RegisterUser from '../../../services/usersService';
 import { User } from '../../../entities/User';
-
+import './homePage.css';
+import { access } from 'fs';
 class RegisterCard extends React.Component {
     constructor(props) {
         super(props)
@@ -21,7 +22,7 @@ class RegisterCard extends React.Component {
         const userObj = { name, email, password };
         RegisterUser(userObj)
             .then(response => {
-                console.log(response)
+                localStorage.setItem("accessToken", response.accessToken)
             })
 
     }
@@ -68,7 +69,7 @@ class RegisterCard extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="register-card">
                 <form onSubmit={this.onFormSubmit}>
                     <label for="name">Name</label>
                     <input onChange={this.onChange} id="name" placeholder="FullName" name="name" type="text" value={this.state.name} />

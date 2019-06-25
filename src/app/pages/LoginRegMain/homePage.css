@@ -1,0 +1,44 @@
+.container {
+    width: 986px;
+}
+
+.home {
+    padding-top: 100px;
+    background-color: rgba(223, 241, 221, 0.664);
+    display: flex;
+    justify-content: space-around;
+    height: 700px;
+}
+
+.main-left h1{
+    margin-bottom: 40px;
+}
+
+.main-left, .main-right {
+    padding: 30px;
+}
+
+.main-right {
+    width: 400px;
+}
+
+.main-right ul li {
+   display: flex;
+}
+
+label{
+        padding: 5px;
+        margin-top: 15px;
+        /* display: inline; */
+    }
+
+input{
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+    }
+
+.login{
+        width: 100%;
+    }
+
