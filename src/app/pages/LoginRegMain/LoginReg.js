@@ -10,21 +10,17 @@ class Main extends React.Component {
         this.state = {
             formCard: true
         }
-        this.changeForm = this.changeForm.bind(this);
+
+        this.changeFormLog = this.changeFormLog.bind(this);
+        this.changeFormReg = this.changeFormReg.bind(this);
     }
 
-    changeForm() {
-        // if (this.state.formCard) {
-        //     this.setState(prevState => {
-        //         (!preState) ? :
-        //     })
-        // }
+    changeFormLog() {
+        this.setState({ formCard: true });
+    }
 
-        if (this.state.formCard === true) {
-            this.setState({ formCard: false });
-        } else {
-            this.setState({ formCard: true });
-        }
+    changeFormReg() {
+        this.setState({ formCard: false });
     }
 
     render() {
@@ -37,10 +33,10 @@ class Main extends React.Component {
                 <div className="main-right">
                     <ul className="nav nav-tabs nav nav-tabs">
                         <li className="nav-item">
-                            <a onClick={this.changeForm} className="nav-link" href="#">Login</a>
+                            <a onClick={this.changeFormLog} className="nav-link" href="#">Login</a>
                         </li>
                         <li className="nav-item">
-                            <a onClick={this.changeForm} className="nav-link" href="#">Register</a>
+                            <a onClick={this.changeFormReg} className="nav-link" href="#">Register</a>
                         </li>
                     </ul>
                     {(this.state.formCard === true) ? <LoginCard history={this.props.history} /> : <RegisterCard />}
