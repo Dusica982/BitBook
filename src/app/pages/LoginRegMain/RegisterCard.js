@@ -1,7 +1,8 @@
 import React from 'react';
 import RegisterUser from '../../../services/usersService';
 import { User } from '../../../entities/User';
-
+import './homePage.css';
+import { access } from 'fs';
 class RegisterCard extends React.Component {
     constructor(props) {
         super(props)
@@ -11,16 +12,19 @@ class RegisterCard extends React.Component {
             password: "",
             errorMsg: ""
         }
-        this.validation = this.validation.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
         this.getData = this.getData.bind(this);
     }
 
     getData() {
         const { name, email, password } = this.state;
-        const userObj = new User(name, email, password);
+        const userObj = { name, email, password };
         RegisterUser(userObj)
-            .then(response => response.json())
+            .then(response => {
+                localStorage.setItem("accessToken", response.accessToken)
+            })
+
     }
 
     onChange(e) {
@@ -31,7 +35,8 @@ class RegisterCard extends React.Component {
         // console.log(name, value);
     }
 
-    validation = (e) => {
+    onFormSubmit(e) {
+        e.preventDefault()
         const { name, email, password } = this.state;
 
         if (name.length < 3) {
@@ -55,6 +60,7 @@ class RegisterCard extends React.Component {
             )
         }
         if (password.length < 6) {
+            e.preventDefault()
             this.setState({ errorMsg: "You need min 6 characters! Try again :)" })
         }
 
@@ -63,8 +69,8 @@ class RegisterCard extends React.Component {
 
     render() {
         return (
-            <div>
-                <form>
+            <div className="register-card">
+                <form onSubmit={this.onFormSubmit}>
                     <label for="name">Name</label>
                     <input onChange={this.onChange} id="name" placeholder="FullName" name="name" type="text" value={this.state.name} />
 
@@ -74,7 +80,7 @@ class RegisterCard extends React.Component {
                     <label for="pass">Password</label>
                     <input onChange={this.onChange} id="pass" placeholder="Min 6 characters" name="password" type="password" value={this.state.password} />
 
-                    <input onClick={this.validation} type="submit" value="Register" />
+                    <input type="submit" value="Register" />
                 </form>
                 <p>{this.state.errorMsg}</p>
             </div >

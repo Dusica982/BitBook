@@ -10,6 +10,7 @@ class AfterLogIn extends React.Component {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
       <>
@@ -18,6 +19,7 @@ class AfterLogIn extends React.Component {
           <Route exact path="/feed" component={Feed} />
           <Route exact path="/profile" component={MyProfile} />
           {/* <Route exact path="/people" component={People} /> */}
+          <Redirect path="/" />
         </Switch>
         <Footer />
       </>
