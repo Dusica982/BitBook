@@ -1,5 +1,5 @@
 import React from 'react';
-import RegisterUser from '../../../services/usersService';
+import { registerUserAuthentication } from '../../../services/usersService';
 import { User } from '../../../entities/User';
 import './homePage.css';
 import { access } from 'fs';
@@ -20,7 +20,7 @@ class RegisterCard extends React.Component {
     getData() {
         const { name, email, password } = this.state;
         const userObj = { name, email, password };
-        RegisterUser(userObj)
+        registerUserAuthentication(userObj)
             .then(response => {
                 if (response.statusCode < 200 || response.statusCode >= 300) {
                     return (
