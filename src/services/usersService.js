@@ -27,7 +27,7 @@ export default registerUser;
 // }
 
 export const getUsers = id => {
-  let url = "https://book-api.hypetech.xyz/v1/users/" + id;
+  let url = "https://book-api.hypetech.xyz/v1/users/1";
 
   return fetch(url)
     .then(response => {
