@@ -1,7 +1,7 @@
 import { UserInfo } from "../entities/UserInfo";
 import { ListOfAuthorsInfo } from '../entities/ListOfAuthorsInfo';
 
-const registerUser = (userObj) => {
+export const registerUserAuthentication = (userObj) => {
   let url = "https://book-api.hypetech.xyz/v1/auth/register";
 
   return fetch(url, {
@@ -15,8 +15,6 @@ const registerUser = (userObj) => {
     .then((response) => response.json())
 };
 
-export default registerUser;
-
 export const getUsers = id => {
   let url = "https://book-api.hypetech.xyz/v1/users/" + id;
 
@@ -27,15 +25,11 @@ export const getUsers = id => {
     })
     .then(apiUsers => {
 
-
       return apiUsers.map(oneUser => {
         return new UserInfo(oneUser.avatarUrl, oneUser.first, oneUser.last, oneUser.about);
       });
     });
 };
-
-
-
 
 export const getAllUsersInfo = () => {
   let url = "https://book-api.hypetech.xyz/v1/users";
@@ -54,6 +48,21 @@ export const getAllUsersInfo = () => {
         return new ListOfAuthorsInfo(user.avatarUrl, user.about.bio, user.name.first, user.name.last, dateString);
       })
     })
-
 };
 
+export const logInUserAuthentication = (email, password) => {
+
+  let url = "https://book-api.hypetech.xyz/v1/auth/login";
+  return fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      'x-api-key': 'B1tD3V'
+    },
+    body: JSON.stringify({
+      email: email,
+      password: password
+    })
+  })
+  // console.log(body.email, body.password);
+}
