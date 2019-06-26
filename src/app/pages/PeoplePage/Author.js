@@ -15,11 +15,9 @@ class Author extends React.Component {
     }
 
 
-
-
     render() {
-        return (
 
+        return (
             <Link to="/profile">
                 <div className="userBox">
                     <img className="img" src={this.props.values.img} alt="User" />

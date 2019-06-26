@@ -31,6 +31,16 @@ export const getUsers = id => {
     });
 };
 
+
+export const getUserId = (id) => {
+  let url = `https://book-api.hypetech.xyz/v1/users/+${id}`;
+  return fetch(url)
+    .then(response => response.json())
+    .then()
+}
+
+
+
 export const getAllUsersInfo = () => {
   let url = "https://book-api.hypetech.xyz/v1/users";
 
