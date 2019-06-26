@@ -1,24 +1,37 @@
 import React from 'react';
-// import VideoPost from './VideoPost';
-// import TextPost from './TextPost';
-// import ImagePost from './ImagePost';
+import { fetchPosts } from '../../../services/fetchPosts';
+import { PostItem } from './posts/PostItem';
+import './Feed.css';
 
-class Feed extends React.Component {
+export class Feed extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            posts: [],
         }
     }
+
+    loadPosts = () => {
+        fetchPosts()
+            .then(posts => {
+                this.setState({ posts })
+                return posts
+            })
+    }
+
+    componentDidMount() {
+        this.loadPosts()
+
+    }
+
     render() {
+        const { posts } = this.state;
         return (
-            <main>
-                {/* <VideoPost />
-                <TextPost />
-                <ImagePost /> */}
-            </main>
+            <>
+                <div className="containerFeed">
+                    {posts.map((post, i) => <PostItem post={post} key={i} />)}
+                </div>
+            </>
         )
     }
 }
-
-export default Feed;
