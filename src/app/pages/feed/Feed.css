@@ -1,0 +1,56 @@
+.containerFeed {
+    width: 1200px;
+    margin: 0 auto;
+
+}
+.containerFeed div {
+text-align: center;
+}
+/*VIDEO*/
+
+.videoPost-player{
+    width: 100%;
+    border: 1px solid #a2b8b7;
+    margin: 50px 0 50px 0;
+    background-color: #eaf6e8;
+}
+
+.videoPost-player iframe{
+    width: 100%;
+    }
+/*IMG*/
+
+.imagePost-image{
+    width: 100%;
+    border: 1px solid #a2b8b7;
+    background-color: #def2f9;
+    margin: 50px 0 50px 0;
+}
+
+.imagePost-image img{
+    width: 100%;
+    padding: 40px;
+}
+.imagePost-comments{
+    text-align: right;
+    margin-right: 70px;
+    margin-bottom: 20px;
+}
+/*TEXT*/
+
+.textPost-text{
+    width: 100%;
+    border: 1px solid #a2b8b7;
+    background-color: #def2f9;
+    margin: 50px 0 50px 0;
+}
+.textPost-text article{
+    width: 100%;
+    padding: 40px;
+    color: #0a1316;
+}
+
+.textPost-comments{
+    margin-right: 70px;
+    margin-bottom: 20px;
+}

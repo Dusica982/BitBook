@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Feed from "../feed/Feed";
+import { Feed } from "../feed/Feed";
 import MyProfile from "../MyProfile/MyProfile";
 import PeoplePage from '../PeoplePage/PeoplePage';
 
