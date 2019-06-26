@@ -15,24 +15,24 @@ border-radius: 10px;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
 
-input{
+.input{
 width: 100%;
 background-color: rgb(135, 172, 240);
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
 
-img{
+.img{
 padding: 10px;
     }
 
-span{
+.span{
     display: inline;
     margin-top: 15px;
     margin-left: 15px;
 }
 
 
-p{
+.p{
 margin-top: 10px;
 display: block;
 }
