@@ -7,7 +7,8 @@ class LoginCard extends React.Component {
         super(props)
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            errorMsg: ""
         }
     }
     onChange = (e) => {
@@ -23,12 +24,27 @@ class LoginCard extends React.Component {
         const { email, password } = this.state;
 
         logInUserAuthentication(email, password)
+            .then(response => {
+                console.log(response);
+                if (response.status < 200 || response.status >= 300) {
+                    return (
+                        this.setState({ errorMsg: "Error with a Fetch request, user already exist" })
+                    )
+                } else {
+                    this.props.history.push('/feed')
+                }
+                return response.json()
+            })
             .then((data) => {
+                console.log(data);
+                if (!data.accessToken) {
+                    return
+                }
                 localStorage.setItem('loginToken', data.accessToken)
                 return data;
             })
-        //redirecting
-        this.props.history.push('/feed')
+            //redirecting
+            .catch(() => { this.props.history.push('/login') })
     };
 
     render() {

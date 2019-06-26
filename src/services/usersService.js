@@ -64,14 +64,5 @@ export const logInUserAuthentication = (email, password) => {
       password: password
     })
   })
-    .then(response => {
-      if (response.statusCode < 200 || response.statusCode >= 300) {
-        console.log(response);
-        return (
-          this.setState({ errorMsg: "Error with a Fetch request, user already exist" })
-        )
-      }
-      return response.json()
-    })
   // console.log(body.email, body.password);
 }
