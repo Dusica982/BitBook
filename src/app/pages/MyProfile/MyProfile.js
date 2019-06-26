@@ -11,7 +11,7 @@ class MyProfile extends React.Component {
   }
 
   componentDidMount() {
-    getUsers(localStorage.getItem("me"))
+    getUsers(localStorage.getItem("loginToken"))
       .then(user => this.setState({ user }))
       .catch(error => console.log("Error"));
   }

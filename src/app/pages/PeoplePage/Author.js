@@ -11,19 +11,27 @@ class Author extends React.Component {
         this.state = {
             authors: []
         }
+
     }
+
+
+
 
     render() {
         return (
 
-            <div className="userBox">
-                <img className="img" src={this.props.values.img} alt="User" />
-                <span className="span">
-                    <p className="p" ><b>{this.props.values.first} {this.props.values.last}</b></p>
-                    <p>{this.props.values.description}</p>
-                    {/* <p className="dateOfCreation">{this.props.values.dateOfCreation}</p> */}
-                </span>
-            </div >
+            <Link to="/profile">
+                <div className="userBox">
+                    <img className="img" src={this.props.values.img} alt="User" />
+                    <span className="span">
+                        <p className="p" ><b>{this.props.values.first} {this.props.values.last}</b></p>
+                        <p>{this.props.values.description}</p>
+                        {/* <p className="dateOfCreation">{this.props.values.dateOfCreation}</p> */}
+                    </span>
+                </div >
+            </Link>
+
+
         )
     }
 }
