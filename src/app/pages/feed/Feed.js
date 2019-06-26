@@ -19,6 +19,10 @@ export class Feed extends React.Component {
             })
     }
 
+    showComments = () => {
+
+    }
+
     componentDidMount() {
         this.loadPosts()
 

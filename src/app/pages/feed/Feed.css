@@ -11,14 +11,18 @@ text-align: center;
 .videoPost-player{
     width: 100%;
     border: 1px solid #a2b8b7;
-    margin: 50px 0 50px 0;
+    margin-top: 50px;
     background-color: #eaf6e8;
 }
 
 .videoPost-player iframe{
     width: 100%;
     }
+.videoPost-comments {
+   background-color: #eaf6e8;
+   padding: 10px 0;
 
+}
 /*IMG*/
 
 .imagePost-image{
