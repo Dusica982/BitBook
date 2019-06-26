@@ -1,30 +1,31 @@
 import React from "react";
 import "./Header.css";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/feed">
           BitBook
-        </a>
+        </Link>
 
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/feed">
                 Feed <span class="sr-only">(current)</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/people">
                 People
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/profile">
                 Profile
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
