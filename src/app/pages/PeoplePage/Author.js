@@ -17,9 +17,9 @@ class Author extends React.Component {
         return (
 
             <div className="userBox">
-                <img className="img" src={this.props.values.img} alt="User" />
-                <span className="span">
-                    <p className="p" ><b>{this.props.values.first} {this.props.values.last}</b></p>
+                <img src={this.props.values.img} alt="User" />
+                <span>
+                    <p><b>{this.props.values.first + this.props.values.last}</b></p>
                     <p>{this.props.values.description}</p>
                     {/* <p className="dateOfCreation">{this.props.values.dateOfCreation}</p> */}
                 </span>

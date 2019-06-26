@@ -2,7 +2,7 @@ import React from 'react';
 import { Author } from './Author';
 import { getAllUsersInfo } from '../../../services/usersService';
 import './PeoplePage.css';
-import SearchButton from './SearchButton';
+
 
 
 class PeoplePage extends React.Component {
@@ -10,8 +10,7 @@ class PeoplePage extends React.Component {
         super(props)
 
         this.state = {
-            authors: [],
-            inputValue: ""
+            authors: []
         }
     }
 
@@ -21,21 +20,14 @@ class PeoplePage extends React.Component {
                 this.setState({ authors });
                 console.log(this.state.authors);
             })
+
     }
 
-    changesOnInput = (e) => {
-        this.setState({ inputValue: e.target.value })
-    };
-
     render() {
-
-        const filteredUser = this.state.authors.filter((user) => {
-            return user.first.includes(this.state.inputValue) || user.last.includes(this.state.inputValue)
-        })
         return (
             <div className="oneUserMainBox">
-                <SearchButton changesOnInput={this.changesOnInput} value={this.state.inputValue} />
-                {filteredUser.map(element => {
+                <input placeholder="Search" />
+                {this.state.authors.map(element => {
                     return (
                         <Author values={element} />
                     )
@@ -45,4 +37,4 @@ class PeoplePage extends React.Component {
     }
 }
 
-export default PeoplePage;
+export default PeoplePage; 
