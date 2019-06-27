@@ -14,12 +14,13 @@ class AfterLogIn extends React.Component {
 
   render() {
     return (
-      <>
+      <>/0
         <Header />
         <Switch>
           <Route exact path="/feed" component={Feed} />
           <Route exact path="/profile/:id?" component={MyProfile} />
           <Route exact path="/people" component={PeoplePage} />
+          <Route exact path="/profile" component={MyProfile} />
           <Redirect path="/feed" />
         </Switch>
         <Footer />

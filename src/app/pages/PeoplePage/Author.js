@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import ListOfAuthorsInfo from '../../../entities/ListOfAuthorsInfo';
 import "./PeoplePage.css";
+import UserConstructor from '../../../entities/UserConstructor';
 
 class Author extends React.Component {
   constructor(props) {
@@ -11,6 +12,12 @@ class Author extends React.Component {
       authors: []
     };
   }
+
+
+  UserConstructor() {
+
+  }
+
 
   render() {
     return (

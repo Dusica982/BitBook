@@ -8,7 +8,6 @@ import SearchButton from './SearchButton';
 class PeoplePage extends React.Component {
     constructor(props) {
         super(props)
-
         this.state = {
             authors: [],
             inputValue: "",
