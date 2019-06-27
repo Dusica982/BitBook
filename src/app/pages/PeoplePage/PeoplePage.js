@@ -11,7 +11,7 @@ class PeoplePage extends React.Component {
 
         this.state = {
             authors: [],
-            inputValue: ""
+            inputValue: "",
         }
     }
 
@@ -19,15 +19,20 @@ class PeoplePage extends React.Component {
         getAllUsersInfo()
             .then(authors => {
                 this.setState({ authors });
-                console.log(this.state.authors);
+                console.log(this.props)
             })
+        //  getUserId()
     }
 
     changesOnInput = (e) => {
         this.setState({ inputValue: e.target.value })
     };
 
+
+
     render() {
+        console.log("a");
+        console.log(this.authors)
 
         const filteredUser = this.state.authors.filter((user) => {
             return user.first.includes(this.state.inputValue) || user.last.includes(this.state.inputValue)
