@@ -2,8 +2,8 @@ import React from "react";
 import { withRouter } from "react-router";
 import "./MyProfile.css";
 import { getUser } from "../../../services/usersService";
-import UserConstructor from '../../../entities/UserConstructor';
-import jwt_decode from 'jwt-decode';
+import UserConstructor from "../../../entities/UserConstructor";
+import jwt_decode from "jwt-decode";
 
 class MyProfile extends React.Component {
   constructor(props) {
@@ -14,19 +14,20 @@ class MyProfile extends React.Component {
     };
   }
 
-
   componentDidMount() {
-    let token = localStorage.getItem("loginToken");
-    let decoded = jwt_decode(token);
-    console.log(decoded);
-
     if (this.props.match.params.id || this.decoded)
       getUser(this.props.match.params.id)
         // getUser(this.props.match.params.id)
         .then(user => this.setState({ user }))
         .catch(error => console.log("Error"));
+    else {
+      let token = localStorage.getItem("loginToken");
+      let decoded = jwt_decode(token);
+      getUser(decoded.id)
+        .then(user => this.setState({ user }))
+        .catch(error => console.log("Error"));
+    }
   }
-
 
   render() {
     return (
