@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
           <ul className="navbar-nav">
             <li className="nav-item active">
               <Link className="nav-link" to="/feed">
-                Feed <span class="sr-only">(current)</span>
+                Feed <span className="sr-only">(current)</span>
               </Link>
             </li>
             <li className="nav-item">

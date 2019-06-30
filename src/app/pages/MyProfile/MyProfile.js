@@ -4,13 +4,14 @@ import "./MyProfile.css";
 import { getUser } from "../../../services/usersService";
 import UserConstructor from "../../../entities/UserConstructor";
 import jwt_decode from "jwt-decode";
+import PopUp from "./PopUp";
 
 class MyProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       user: null,
-      id: this.props.match.params.id
+      click: false
     };
   }
 
@@ -29,6 +30,28 @@ class MyProfile extends React.Component {
     }
   }
 
+  handleClick = () => {
+    this.setState({
+      click: true
+    });
+  };
+
+  closePopup = () => {
+    this.setState({
+      click: false
+    });
+  };
+
+  updateUser = newUser => {
+    this.setState(state => ({
+      user: {
+        ...state.user,
+        ...newUser
+      },
+      click: false
+    }));
+  };
+
   render() {
     return (
       <div className="containerForMainPart">
@@ -40,8 +63,15 @@ class MyProfile extends React.Component {
         />
         <h3>{this.state.user && `${this.state.user.name.first} ${this.state.user.name.last}`}</h3>
         <p>{this.state.user && this.state.user.about.bio}</p>
-        {this.state.user && <span>{this.state.user.posts.length} Posts</span>}
-        {this.state.user && <span>{this.state.user.comments.length} Comments</span>}
+        {this.state.user && <span className="spanButton">{this.state.user.posts.length} Posts</span>}
+        {this.state.user && <span className="spanButton">{this.state.user.comments.length} Comments</span>}
+        {!this.props.match.params.id && (
+          <button className="popUp" onClick={this.handleClick}>
+            {" "}
+            Update Button
+          </button>
+        )}
+        {this.state.click && <PopUp user={this.state.user} onClose={this.closePopup} onUpdate={this.updateUser} />}
       </div>
     );
   }
