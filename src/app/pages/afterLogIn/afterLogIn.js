@@ -14,7 +14,7 @@ class AfterLogIn extends React.Component {
 
   render() {
     return (
-      <>/0
+      <>
         <Header />
         <Switch>
           <Route exact path="/feed" component={Feed} />

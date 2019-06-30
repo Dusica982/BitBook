@@ -1,0 +1,115 @@
+#overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+/*White popup div*/
+
+#insideDiv {
+  position: absolute;
+  /* display: flex; */
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  top: 10%;
+  left: 25%;
+  background-color: white;
+  padding: 2%;
+}
+
+/*Naslov*/
+
+.updateProfile {
+  display: block;
+  position: relative;
+  text-align: start;
+  width: 100%;
+}
+
+/* Image and single button*/
+
+.imageAndButton {
+  margin: 0px auto;
+  text-align: center;
+  float: left;
+  height: 110px;
+}
+
+.nameWrapper {
+  float: left;
+  height: 110px;
+  width: 80%;
+}
+
+.incognitoImage {
+  border-radius: unset;
+  display: inline;
+  text-align: center;
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.singleButton {
+  display: block;
+  background-color: rgb(86, 86, 240);
+  border-radius: none;
+  border-radius: 5px;
+}
+
+/*Upper field*/
+
+.userDescription {
+  display: block;
+}
+
+/*Down description*/
+
+.inputPlaceName {
+  border-color: rgb(236, 158, 158);
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid black;
+  width: 100%;
+  display: inline-block;
+  margin-top: 37px;
+  margin-left: 20px;
+}
+
+.inputPlace {
+  border-color: rgb(236, 158, 158);
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid black;
+  width: 100%;
+  display: inline-block;
+}
+
+/*Two Buttons*/
+
+.closeAndUpdateButtons {
+  display: block;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10%;
+}
+
+/*Single Buttons in last row*/
+
+.popUpButtons {
+  /* position: relative; */
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: 0px 10px 8px #888888;
+  background-color: rgb(98, 88, 247);
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
