@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
 .containerFeed {
     width: 1200px;
     margin: 0 auto;
@@ -30,44 +34,56 @@
 
 /*IMG*/
 
-.imagePost-image {
-    width: 100%;
-    border: 1px solid #a2b8b7;
-    background-color: #def2f9;
-    margin: 50px 0 50px 0;
-    display: flex;
-    justify-content: space-around;
-}
-
 .imagePost-image img {
     width: 100%;
     padding: 40px;
 }
 
-.imagePost-comments {
-    text-align: right;
-    margin-right: 70px;
-    margin-bottom: 20px;
+.imagePost-details {
+    display: flex;
+    justify-content: space-around;
+    background-color: #eaf6e8;
+    padding: 10px 0;
+    border: 1px solid #a2b8b7;
 }
 
 /*TEXT*/
 
 .textPost-text {
-    width: 100%;
-    border: 1px solid #a2b8b7;
     background-color: #def2f9;
-    margin: 50px 0 50px 0;
+    margin: 40px 0;
+    border: 1px solid #1a1d1d;
 }
 
-.textPost-text article {
-    width: 100%;
+.textPost-text p {
     padding: 40px;
     color: #0a1316;
 }
 
-.textPost-comments {
-    margin-right: 70px;
-    margin-bottom: 20px;
+.textPost-details {
     display: flex;
     justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid black;
+}
+
+/*POST DETAILS*/
+
+.post-details {
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: left;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+.imagePost-box {
+    width: 100%;
+    border: 1px solid #a2b8b7;
+    background-color: #def2f9;
+    margin: 50px 0 50px 0;
 }

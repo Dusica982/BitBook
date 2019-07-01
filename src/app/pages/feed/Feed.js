@@ -16,7 +16,7 @@ export class Feed extends React.Component {
             .then(posts => {
                 this.setState({ posts })
                 console.log(posts);
-                
+
                 return posts
             })
     }

@@ -6,10 +6,10 @@ import { TextPost } from '../postItems/TextPost';
 export const PostItem = (props) => {
     const { post } = props;
     if (post.type === 'video') {
-        return <VideoPost post={post} id={post.id}/>
+        return <VideoPost post={post} id={post.id} />
     } if (post.type === 'image') {
-        return <ImagePost post={post} id={post.id}/>
+        return <ImagePost post={post} id={post.id} />
     } else {
-        return <TextPost post={post} id={post.id}/>
+        return <TextPost post={post} id={post.id} />
     }
 }
