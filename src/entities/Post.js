@@ -12,3 +12,4 @@ export class Post {
         this.comments = postObj.comments;
     }
 }
+

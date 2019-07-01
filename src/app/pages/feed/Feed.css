@@ -1,61 +1,73 @@
 .containerFeed {
     width: 1200px;
     margin: 0 auto;
+}
 
-}
 .containerFeed div {
-text-align: center;
+    text-align: center;
 }
+
 /*VIDEO*/
 
-.videoPost-player{
+.videoPost-player {
     width: 100%;
     border: 1px solid #a2b8b7;
     margin-top: 50px;
     background-color: #eaf6e8;
 }
 
-.videoPost-player iframe{
+.videoPost-player iframe {
     width: 100%;
-    }
-.videoPost-comments {
-   background-color: #eaf6e8;
-   padding: 10px 0;
-
 }
+
+.videoPost-comments {
+    background-color: #eaf6e8;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+}
+
 /*IMG*/
 
-.imagePost-image{
+.imagePost-image {
     width: 100%;
     border: 1px solid #a2b8b7;
     background-color: #def2f9;
     margin: 50px 0 50px 0;
+    display: flex;
+    justify-content: space-around;
 }
 
-.imagePost-image img{
+.imagePost-image img {
     width: 100%;
     padding: 40px;
 }
-.imagePost-comments{
+
+.imagePost-comments {
     text-align: right;
     margin-right: 70px;
     margin-bottom: 20px;
 }
+
 /*TEXT*/
 
-.textPost-text{
+.textPost-text {
     width: 100%;
     border: 1px solid #a2b8b7;
     background-color: #def2f9;
     margin: 50px 0 50px 0;
 }
-.textPost-text article{
+
+.textPost-text article {
     width: 100%;
     padding: 40px;
     color: #0a1316;
 }
 
-.textPost-comments{
+.textPost-comments {
     margin-right: 70px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
 }

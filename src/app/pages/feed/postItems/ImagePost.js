@@ -6,8 +6,10 @@ export const ImagePost = (props) => {
         <div className="imagePost-image">
             <img src={post.imageUrl} />
             <div className="imagePost-comments">
-                <p>Comments:{post.comments.length}</p>
+                <a href="#" id={post.id}>Show details</a>
+                <a href="#" >Comments: {post.comments.length}</a>
             </div>
         </div>
     )
 }
+// onClick={showPosts}

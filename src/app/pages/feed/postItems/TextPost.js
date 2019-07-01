@@ -6,8 +6,10 @@ export const TextPost = (props) => {
         <div className="textPost-text">
             <article>{post.text}</article>
             <div className="textPost-comments">
-                <p>Comments:{post.comments.length}</p>
+            <a href="#" id={post.id}>Show details</a>
+            <a href="#" >Comments: {post.comments.length}</a>
             </div>
         </div>
     )
 }
+// onClick={showPosts}
