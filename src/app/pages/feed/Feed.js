@@ -15,8 +15,14 @@ export class Feed extends React.Component {
         fetchPosts()
             .then(posts => {
                 this.setState({ posts })
+                console.log(posts);
+
                 return posts
             })
+    }
+
+    showComments = () => {
+
     }
 
     componentDidMount() {
@@ -29,7 +35,7 @@ export class Feed extends React.Component {
         return (
             <>
                 <div className="containerFeed">
-                    {posts.map((post, i) => <PostItem post={post} key={i} />)}
+                    {posts.map((post, i) => <PostItem post={post} key={i} id={post.id} />)}
                 </div>
             </>
         )

@@ -12,6 +12,8 @@ export const fetchPosts = () => {
     })
         .then(response => response.json())
         .then(data => {
+            console.log(data);
+
             const posts = data.map((post) => {
                 const comments = post.comments.map((comment) => {
                     return new Comments(comment)
@@ -20,4 +22,15 @@ export const fetchPosts = () => {
             })
             return posts
         })
+}
+
+export const showPostDetail = (userId) => {
+    return fetch((`https://book-api.hypetech.xyz/v1/posts/${userId}`), {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': 'B1tD3V',
+        },
+    })
+        .then((response) => response.json())
 }
